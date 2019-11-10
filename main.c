@@ -24,7 +24,7 @@ int main () {
 	printf ("Generating random numbers:\n"); 
 	int i; 
 	for (i = 0; i < 10; i ++) { 
-		a[i] = randomNumber (); 
+		a[i] = randNumber (); 
 	}
 	printArray (a); 
 
@@ -35,7 +35,7 @@ int main () {
 	printf ("Reading numbers from the file ... \n"); 
 	int another [10]; 
 	int f2 = open ("numbers.txt", O_RDONLY); 
-	read (f2, &another, sizeof (another); 
+	read (f2, &another, sizeof (another)); 
 	
 	printf ("Verification that written values stay the same: \n"); 
 	printArray (another); 	
