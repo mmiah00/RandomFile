@@ -9,6 +9,7 @@ int randNumber () {
 	int f = open ("/dev/random", O_RDONLY); 
 	int ans; 
 	read (f, &ans, sizeof (int)); 
+	close (f); 
 	return ans;
 }
 
@@ -31,12 +32,14 @@ int main () {
 	printf ("Writing numbers to another file... \n"); 
 	int f = open ("numbers.txt", O_RDWR, 0666); 
 	write (f, a, sizeof (a)); 
-	
+	close (f); 
+
 	printf ("Reading numbers from the file ... \n"); 
 	int another [10]; 
 	int f2 = open ("numbers.txt", O_RDONLY); 
 	read (f2, &another, sizeof (another)); 
-	
+	close (f2); 
+
 	printf ("Verification that written values stay the same: \n"); 
 	printArray (another); 	
 
